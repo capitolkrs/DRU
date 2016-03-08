@@ -1,0 +1,18 @@
+/**
+ * 
+ */
+package hidePackage;
+
+/**
+ * @author CXT8497
+ * 
+ */
+public class Comments {
+	public static void main(String[] args) {
+		
+		Integer age=new Integer(30);
+		System.out.println(age);
+		
+	}
+
+}

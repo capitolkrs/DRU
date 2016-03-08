@@ -1,0 +1,18 @@
+package com.HDpages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+
+public class BasePage {
+	private final String baseUrl="http://www.homedepot.com";
+	WebDriver driver;
+	public BasePage(WebDriver driver){
+		this.driver=driver;
+		
+	}
+	
+	public HomePage NavigateToHomePage(){
+		driver.get(baseUrl);
+		return HomePage(driver);
+	}
+}
