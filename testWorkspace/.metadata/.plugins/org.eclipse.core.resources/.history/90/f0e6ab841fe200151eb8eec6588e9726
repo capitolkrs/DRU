@@ -1,0 +1,43 @@
+import java.io.File;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.HDpages.PageBase;
+
+public class Runner {
+	WebDriver driver;
+	
+	@BeforeTest
+	
+	public void setUp(){
+		
+		//driver=new FirefoxDriver();
+		
+		String relativePath=new File(System.getProperty("user.dir")).getAbsolutePath(); 
+		System.setProperty("webdriver.chrome.driver",relativePath + "/chromedriver.exe");
+		driver=new ChromeDriver();
+		
+	}
+	
+	@Test
+	public void launchBrowser(){
+		/*PageBase pageBase=new PageBase(driver);
+		pageBase.NavigateToHomePage();*/
+		String relativePath=new File(System.getProperty("user.dir")).getAbsolutePath(); 
+		System.out.println(relativePath);
+	}
+
+	@AfterTest
+	public void tearDown(){
+		
+		driver.close();
+		driver.quit();
+		
+	}
+	
+}

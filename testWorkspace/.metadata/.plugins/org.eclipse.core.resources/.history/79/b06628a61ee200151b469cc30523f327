@@ -1,0 +1,38 @@
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.HDpages.PageBase;
+
+public class Runner {
+	WebDriver driver;
+	
+	@BeforeTest
+	
+	public void setUp(){
+		
+		//driver=new FirefoxDriver();
+		
+		System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+		driver=new ChromeDriver();
+		
+	}
+	
+	@Test
+	public void launchBrowser(){
+		PageBase pageBase=new PageBase(driver);
+		pageBase.NavigateToHomePage();
+	}
+
+	@AfterTest
+	public void tearDown(){
+		
+		driver.close();
+		driver.quit();
+		
+	}
+	
+}

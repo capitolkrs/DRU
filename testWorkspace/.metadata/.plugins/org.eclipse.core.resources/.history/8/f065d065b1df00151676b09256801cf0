@@ -1,0 +1,32 @@
+package com.test;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class BinarySearch {
+
+	public static void main(String[] args) {
+		List<String> studentList = new ArrayList();
+		studentList.add("StudentLema");
+		studentList.add("StudentHenok");
+		studentList.add("StudentGirma");
+		studentList.add("StudentGomen");
+		studentList.add("StudentDinich");
+		
+		
+		System.out.println("Before Sorting: "+studentList);
+		
+		Collections.sort(studentList);
+		
+		System.out.println("After Sorting: "+studentList);
+		
+		
+		int k=Collections.binarySearch(studentList, "StudentGomen", new MyComparator());
+		
+		System.out.println(k);
+		
+	}
+
+}
